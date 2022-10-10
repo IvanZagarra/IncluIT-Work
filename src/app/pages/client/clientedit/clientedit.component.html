@@ -1,0 +1,73 @@
+
+    <h2 class="god1">Editando Clientes</h2>
+    
+    <div class="container">
+        <form [formGroup]="formix" (ngSubmit)="editar()">
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Nombre del cliente</mat-label>
+                    <input type="text" matInput formControlName="name">
+    
+                    <mat-error  *ngIf="formix.get('name')?.errors && formix.get('name')?.touched">
+                        <p *ngIf="formix.get('name')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Apellido</mat-label>
+                    <input type="text" matInput placeholder="Ingrese el apellido" formControlName="lastname">
+                    <mat-error *ngIf="formix.get('lastname')?.errors && formix.get('lastname')?.touched">
+                        <p *ngIf="formix.get('lastname')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Correo</mat-label>
+                    <input type="email" matInput placeholder="Ingrese el correo" formControlName="email">
+                    <mat-error *ngIf="formix.get('email')?.errors && formix.get('email')?.touched">
+                        <p *ngIf="formix.get('email')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>DNI</mat-label>
+                    <input type="number" matInput placeholder="Ingrese el DNI" formControlName="dni">
+                    <mat-error *ngIf="formix.get('dni')?.errors && formix.get('dni')?.touched">
+                        <p *ngIf="formix.get('dni')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input type="date" matInput placeholder="Fecha de nacimiento" formControlName="born">
+                    <mat-error *ngIf="formix.get('born')?.errors && formix.get('born')?.touched">
+                        <p *ngIf="formix.get('born')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Numero de teléfono</mat-label>
+                    <input type="text" matInput placeholder="Ingrese el numero" formControlName="cell">
+                    <mat-error *ngIf="formix.get('cell')?.errors && formix.get('cell')?.touched">
+                        <p *ngIf="formix.get('cell')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field hideRequiredMarker appearance="fill">
+                    <mat-label>Domicilio</mat-label>
+                    <input type="text" matInput placeholder="Ingrese la dirección" formControlName="add">
+                    <mat-error *ngIf="formix.get('add')?.errors && formix.get('add')?.touched">
+                        <p *ngIf="formix.get('add')?.hasError('required')">Campo Obligatorio</p>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+    
+            <button class="button" [disabled]="formix.invalid" (click)="editar()" type="submit" mat-raised-button color="primary">Guardar</button>
+        </form>
+    </div>
